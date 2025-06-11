@@ -8,6 +8,14 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
+  //count the wrong number of guesses
+  let wrongGuessCount = 0;
+  for (let i = 0; i < guessedLetters.length; i++) {
+    if (!currentWord.includes(guessedLetters[i])) {
+      wrongGuessCount++;
+    }
+  }
+
   /*
     A new array in state to hold user's guessed letters.When the user choose a letter,
   letter to this state array. 
