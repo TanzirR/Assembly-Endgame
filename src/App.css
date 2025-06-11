@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  background-color: #262626;
+  color: #d9d9d9;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+header h1 {
+  color: #f9f4da;
+  font-weight: 500;
+  font-size: 1.75rem;
+  text-align: center;
+  margin-top: 60px;
+}
+header p {
+  color: #8e8e8e;
+  font-weight: 500;
+  font-size: 1.15rem;
+  max-width: 550px;
+  text-align: center;
+}
+
+.game-status {
+  background-color: #10a95b;
+  max-width: 550px;
+  height: 80px;
+  color: #f9f4da;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.game-status h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0px;
+  padding-top: 5px;
+}
+.game-status p {
+  font-size: 1.15rem;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.languages-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  max-width: 550px;
+  justify-content: center;
+  align-items: center;
+}
+.language {
+  border-radius: 4px;
+  padding: 6px;
+}
+.current-word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  margin-top: 40px;
+}
+.letters {
+  border-bottom: 1px solid #f9f4da;
+  background-color: #323232;
+  width: 50px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+}
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 40px;
+  max-width: 550px;
+}
+.keyboard-letters {
+  width: 50px;
+  height: 50px;
+  background-color: #fcba29;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e1e1e;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.new-game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-game-btn {
+  background-color: #11b5e5;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  width: 228px;
+  height: 40px;
+  color: #1e1e1e;
+  font-weight: 600;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.correctLetter {
+  background-color: #10a95b;
+}
+
+.inCorrectLetter {
+  background-color: #ec5d49;
+}
