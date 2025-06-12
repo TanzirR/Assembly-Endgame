@@ -60,6 +60,7 @@ header p {
 .language {
   border-radius: 4px;
   padding: 6px;
+  position: relative;
 }
 
 /* Dimmed overlay with skull on "lost" languages */
