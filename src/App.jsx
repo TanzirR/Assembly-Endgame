@@ -8,11 +8,30 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
+  //Derived values...
+
   //count the wrong number of guesses
   let wrongGuessCount = 0;
   for (let i = 0; i < guessedLetters.length; i++) {
     if (!currentWord.includes(guessedLetters[i])) {
       wrongGuessCount++;
+    }
+  }
+
+  /**
+   * Game over if  the game is won or guessed incorrectly within 8 times.
+   *  Make it more dynamic if more languages are added.
+   * Tries should be n-1. Or if the game is won
+   */
+  const isGameOver = wrongGuessCount === languages.length - 1 ? true : false;
+
+  let isGameWon = false;
+  for (let i = 0; i < currentWord.length; i++) {
+    if (guessedLetters[i] !== currentWord[i]) {
+      isGameWon = false;
+      break;
+    } else {
+      isGameWon = true;
     }
   }
 
@@ -28,11 +47,11 @@ function App() {
     });
   }
 
-  //Convert the currentWord string to an array and map over
+  //Map over currentWord
   const displayCurrentWord = currentWord.map((word, index) => {
     return (
-      <div className="letters" style={{ color: "red" }} key={index}>
-        {word.toLocaleUpperCase()}
+      <div className="letters" key={index}>
+        {guessedLetters.includes(word) ? word.toLocaleUpperCase() : ""}
       </div>
     );
   });
@@ -58,10 +77,11 @@ function App() {
   });
 
   //Map over the languages objs
-  const languageElements = languages.map((language) => {
+  const languageElements = languages.map((language, index) => {
+    const isLanguageLost = index < wrongGuessCount;
     return (
       <div
-        className="language"
+        className={isLanguageLost ? "language lost" : "language"}
         key={language.name}
         style={{
           backgroundColor: language.backgroundColor,
@@ -90,7 +110,8 @@ function App() {
       <div className="current-word">{displayCurrentWord}</div>
       <div className="keyboard">{keyboard}</div>
       <div className="new-game">
-        <button className="new-game-btn">New Game</button>
+        {(isGameWon && <button className="new-game-btn">New Game</button>) ||
+          (isGameOver && <button className="new-game-btn">New Game</button>)}
       </div>
     </>
   );
