@@ -25,15 +25,9 @@ function App() {
    */
   const isGameOver = wrongGuessCount === languages.length - 1 ? true : false;
 
-  let isGameWon = false;
-  for (let i = 0; i < currentWord.length; i++) {
-    if (guessedLetters[i] !== currentWord[i]) {
-      isGameWon = false;
-      break;
-    } else {
-      isGameWon = true;
-    }
-  }
+  let isGameWon = currentWord.every((letter) =>
+    guessedLetters.includes(letter)
+  );
 
   /*
     A new array in state to hold user's guessed letters.When the user choose a letter,
