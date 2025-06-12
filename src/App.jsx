@@ -87,6 +87,25 @@ function App() {
     );
   });
 
+ //Render Game status
+  function renderGameStatus() {
+    if (isGameWon) {
+      return (
+        <div className=" game-status game-won">
+          <h2>You win!</h2>
+          <p>Well done! 🎉</p>
+        </div>
+      );
+    } else if (isGameOver) {
+      return (
+        <div className="game-status game-lost">
+          <h2>Game over!</h2>
+          <p>You lose! Better start learning Assembly 😭</p>
+        </div>
+      );
+    } else return null;
+  }
+
   return (
     <>
       <header>
@@ -96,10 +115,8 @@ function App() {
           Assembly!
         </p>
       </header>
-      <div className="game-status">
-        <h2>You win!</h2>
-        <p>Well done! 🎉</p>
-      </div>
+
+      <div className="game-status">{renderGameStatus}</div>
       <div className="languages-section">{languageElements}</div>
       <div className="current-word">{displayCurrentWord}</div>
       <div className="keyboard">{keyboard}</div>
