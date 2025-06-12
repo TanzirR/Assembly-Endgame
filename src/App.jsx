@@ -116,7 +116,7 @@ function App() {
         </p>
       </header>
 
-      <div className="game-status">{renderGameStatus}</div>
+      <div className="game-status">{renderGameStatus()}</div>
       <div className="languages-section">{languageElements}</div>
       <div className="current-word">{displayCurrentWord}</div>
       <div className="keyboard">{keyboard}</div>
