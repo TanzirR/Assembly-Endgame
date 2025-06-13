@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { clsx } from "clsx";
 import "./App.css";
 import { languages } from "../languages";
+import { getFarewellText } from "../utils";
 
 function App() {
   const [currentWord, setCurrentWord] = useState("react".split(""));
@@ -23,7 +24,7 @@ function App() {
    *  Make it more dynamic if more languages are added.
    * Tries should be n-1. Or if the game is won
    */
-  const isGameOver = wrongGuessCount === languages.length - 1 ? true : false;
+  const isGameOver = wrongGuessCount == languages.length - 1 ? true : false;
 
   let isGameWon = currentWord.every((letter) =>
     guessedLetters.includes(letter)
@@ -87,7 +88,7 @@ function App() {
     );
   });
 
- //Render Game status
+  //Render Game status
   function renderGameStatus() {
     if (isGameWon) {
       return (
@@ -103,7 +104,12 @@ function App() {
           <p>You lose! Better start learning Assembly 😭</p>
         </div>
       );
-    } else return null;
+    } else if (
+      guessedLetters[guessedLetters.length - 1] &&
+      !currentWord.includes(guessedLetters[guessedLetters.length - 1])
+    ) {
+      return <div>{getFarewellText(languages[wrongGuessCount - 1].name)}</div>;
+    }
   }
 
   return (
