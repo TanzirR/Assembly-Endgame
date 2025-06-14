@@ -65,7 +65,6 @@ function App() {
         className={className}
         key={letter}
         disabled={isGameOver || isGameWon ? true : false}
-        style={{ opacity: isGameOver || isGameWon ? 0.5 : 1 }}
         onClick={() => addGuessedLetter(letter)}
       >
         {letter.toLocaleUpperCase()}
