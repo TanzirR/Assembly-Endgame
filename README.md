@@ -91,4 +91,4 @@ yarn dev
 ---
 
 > _Guess the word, save the world!_  
-> _Enjoy playing and feel free to contribute!_
+> _Enjoy playing!_
