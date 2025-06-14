@@ -94,10 +94,10 @@ function App() {
     );
   });
   //Render a new game
-  function renderNewGame() {
-    wrongGuessCount = 0;
-    setGuessedLetters("");
-  }
+  // function renderNewGame() {
+  //   wrongGuessCount = 0;
+  //   setGuessedLetters("");
+  // }
   //Render Game status
   function renderGameStatus() {
     if (isGameWon) {
@@ -147,12 +147,12 @@ function App() {
       <div className="keyboard">{keyboard}</div>
       <div className="new-game">
         {(isGameWon && (
-          <button className="new-game-btn" onClick={renderNewGame}>
+          <button className="new-game-btn" onClick={() => window.location.reload()}>
             New Game
           </button>
         )) ||
           (isGameOver && (
-            <button className="new-game-btn" onClick={renderNewGame}>
+            <button className="new-game-btn" onClick={() => window.location.reload()}>
               New Game
             </button>
           ))}
