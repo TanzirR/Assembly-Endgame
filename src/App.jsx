@@ -108,7 +108,7 @@ function App() {
       guessedLetters[guessedLetters.length - 1] &&
       !currentWord.includes(guessedLetters[guessedLetters.length - 1])
     ) {
-      return <div>{getFarewellText(languages[wrongGuessCount - 1].name)}</div>;
+      return <div className="game-status farewell-section">{getFarewellText(languages[wrongGuessCount - 1].name)}</div>;
     }
   }
 
