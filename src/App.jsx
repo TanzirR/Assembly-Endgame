@@ -42,11 +42,15 @@ function App() {
     });
   }
 
-  //Map over currentWord
+  //Map over the correct guessed letters. If the game is lost, display the entire word
   const displayCurrentWord = currentWord.map((word, index) => {
     return (
       <div className="letters" key={index}>
-        {guessedLetters.includes(word) ? word.toLocaleUpperCase() : ""}
+        {isGameOver
+          ? word.toLocaleUpperCase()
+          : guessedLetters.includes(word)
+          ? word.toLocaleUpperCase()
+          : ""}
       </div>
     );
   });
