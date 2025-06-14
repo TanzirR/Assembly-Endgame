@@ -1,26 +1,18 @@
-# Assembly-Endgame
+# Assembly Endgame
 
-A mini-game inspired by Hangman: **Guess the word in under 8 attempts to keep the programming world from Assembly!**  
+A fun and educational word-guessing game inspired by Hangman, built with React. Test your vocabulary and learn new words as you play!
 
----
+## Features
 
-## Table of Contents
-
-- [Demo](#demo)
-- [Screenshots](#screenshots)
-- [Game Features](#game-features)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Documentation](#documentation)
-- [License](#license)
-
----
+- 🎮 Interactive word-guessing gameplay  
+- 🏆 Win or lose feedback with confetti and visual cues  
+- 💡 Dynamic word selection from a customizable word list  
+- 📱 Responsive design for desktop and mobile  
+- 🔤 On-screen keyboard for easy letter selection  
 
 ## Demo
 
-Play the game live: [https://assembly-tanzir.netlify.app/](https://assembly-tanzir.netlify.app/)
-
----
+[https://assembly-tanzir.netlify.app/](https://assembly-tanzir.netlify.app/)
 
 ## Screenshots
 
@@ -29,24 +21,43 @@ Play the game live: [https://assembly-tanzir.netlify.app/](https://assembly-tanz
 <img src="https://github.com/user-attachments/assets/81b7d882-f447-4e12-9bff-2308ab81921c" alt="won" width="300"/>
 <img src="https://github.com/user-attachments/assets/39e52e80-30de-45ec-a216-09e861b1f6d1" alt="def" width="300"/>
 
----
+## Getting Started
 
-## Game Features
+### Prerequisites
 
-- Classic Hangman-style word-guessing gameplay
-- 8 attempts to save the programming world from Assembly
-- Modern, responsive UI built with React and Vite
+- [Node.js](https://nodejs.org/) (v14 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
----
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/TanzirR/Assembly-Endgame.git
+   cd Assembly-Endgame
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
 ## Project Structure
 
-```plaintext
+```
 assembly_endgame/
-├── node_modules/
 ├── public/
-│   ├── index.html
-│   └── ...
+│   └── index.html
 ├── src/
 │   ├── App.jsx
 │   ├── App.css
@@ -55,37 +66,17 @@ assembly_endgame/
 │   ├── utils.js
 │   └── ... (other components/files)
 ├── package.json
-├── README.md
-└── ...
-
----
-
-## Getting Started
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/TanzirR/Assembly-Endgame.git
-cd Assembly-Endgame
+└── README.md
 ```
 
-### 2. Install dependencies
+*Made with ❤️ by Tanzir Bin Razzaque (https://github.com/TanzirR)*
 
-```bash
-npm install
-# or
-yarn install
-```
 
-### 3. Run the development server
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
----
 
-> _Guess the word, save the world!_  
-> _Enjoy playing!_
+
+
+
+
+
