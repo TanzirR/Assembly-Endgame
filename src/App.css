@@ -29,7 +29,7 @@ header p {
 }
 
 .game-status {
-  background-color: #10a95b;
+  /* background-color: #10a95b; */
   max-width: 550px;
   height: 80px;
   color: #f9f4da;
@@ -37,6 +37,12 @@ header p {
   border-radius: 8px;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+.game-won {
+  background-color: #10a95b;
+}
+.game-lost {
+  background-color: #ba2a2a;
 }
 .game-status h2 {
   font-size: 1.75rem;
@@ -77,6 +83,7 @@ header p {
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
 }
+
 .current-word {
   display: flex;
   justify-content: center;
@@ -94,7 +101,7 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: transparent;
+  color: #f9f4da;
 }
 .keyboard {
   display: flex;
