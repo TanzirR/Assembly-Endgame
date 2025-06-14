@@ -126,10 +126,12 @@ function App() {
     <>
       <header>
         <h1>Assembly: Endgame</h1>
-        <p>
-          Guess the word in under 8 attempts to keep the programming world from
-          Assembly!
-        </p>
+        {isGameOver ? null : (
+          <p>
+            {`Guess the word in under ${languages.length - wrongGuessCount - 1}
+          attempts to keep the programming world from Assembly!`}
+          </p>
+        )}
       </header>
 
       <div className="game-status">{renderGameStatus()}</div>
