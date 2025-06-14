@@ -147,3 +147,15 @@ header p {
 .inCorrectLetter {
   background-color: #ec5d49;
 }
+
+.farewell-section {
+  background-color: #7a5ea7;
+  border: 2px #323232;
+  border-style: dotted;
+  font-style: italic;
+  color: #f9f4da;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
