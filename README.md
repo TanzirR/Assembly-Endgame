@@ -28,9 +28,9 @@ Play the game live: [https://assembly-tanzir.netlify.app/](https://assembly-tanz
 <!-- Add your screenshots to the /screenshots directory and update the paths below -->
 ![Gameplay Screenshot](![home](https://github.com/user-attachments/assets/d1aae102-9aad-433e-9683-6e6444983ce8)
 play.png)
-![Victory Screen]([won](https://github.com/user-attachments/assets/541a8f3e-61fd-4989-bc15-efee7610accc)
+![Victory Screenhot]([won](https://github.com/user-attachments/assets/541a8f3e-61fd-4989-bc15-efee7610accc)
 s/victory.png)
-![Defeat Screen]([def](https://github.com/user-attachments/assets/3fe5490b-1af0-4269-b8c1-6ac9b5ddf234)
+![Defeat Screenhot]([def](https://github.com/user-attachments/assets/3fe5490b-1af0-4269-b8c1-6ac9b5ddf234)
 t.png)
 
 ---
