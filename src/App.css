@@ -119,6 +119,10 @@ header p {
   border-radius: 4px;
   cursor: pointer;
 }
+.keyboard-letters:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
 .new-game {
   display: flex;
   justify-content: center;
