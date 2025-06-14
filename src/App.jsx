@@ -68,7 +68,7 @@ function App() {
       <button
         className={className}
         key={letter}
-        disabled={isGameOver || isGameWon ? true : false}
+        disabled={isGameOver || isGameWon || isGuessed? true : false}
         onClick={() => addGuessedLetter(letter)}
       >
         {letter.toLocaleUpperCase()}
