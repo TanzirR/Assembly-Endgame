@@ -42,23 +42,21 @@ Play the game live: [https://assembly-tanzir.netlify.app/](https://assembly-tanz
 ## Project Structure
 
 ```plaintext
-Assembly-Endgame/
-├── public/               # Static assets
+assembly_endgame/
+├── node_modules/
+├── public/
+│   ├── index.html
 │   └── ...
 ├── src/
-│   ├── assets/           # Images, icons, etc.
-│   ├── components/       # React components
-│   ├── App.jsx           # Main app component
-│   ├── main.jsx          # Entry point
-│   └── ...
-├── .eslintrc.cjs         # Linting rules
-├── .gitignore
-├── index.html
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.js
+│   ├── words.js
+│   ├── utils.js
+│   └── ... (other components/files)
 ├── package.json
 ├── README.md
-├── vite.config.js
 └── ...
-```
 
 ---
 
