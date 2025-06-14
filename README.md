@@ -1,7 +1,6 @@
 # Assembly-Endgame
 
 A mini-game inspired by Hangman: **Guess the word in under 8 attempts to keep the programming world from Assembly!**  
-Built with React and Vite.
 
 ---
 
