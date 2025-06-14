@@ -6,14 +6,12 @@ import { getFarewellText } from "../utils";
 import { randomWord } from "../words";
 import Confetti from "react-confetti";
 
-
 function App() {
   const [currentWord, setCurrentWord] = useState(() => randomWord.split(""));
   const [guessedLetters, setGuessedLetters] = useState([]);
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
   //Derived values...
-
   //count the wrong number of guesses
   let wrongGuessCount = 0;
   for (let i = 0; i < guessedLetters.length; i++) {
@@ -95,7 +93,11 @@ function App() {
       </div>
     );
   });
-
+  //Render a new game
+  function renderNewGame() {
+    wrongGuessCount = 0;
+    setGuessedLetters("");
+  }
   //Render Game status
   function renderGameStatus() {
     if (isGameWon) {
@@ -116,13 +118,12 @@ function App() {
       guessedLetters[guessedLetters.length - 1] &&
       !currentWord.includes(guessedLetters[guessedLetters.length - 1])
     ) {
-      return <div className="game-status farewell-section">{getFarewellText(languages[wrongGuessCount - 1].name)}</div>;
+      return (
+        <div className="game-status farewell-section">
+          {getFarewellText(languages[wrongGuessCount - 1].name)}
+        </div>
+      );
     }
-  }
-  //Render a new game
-  function renderNewGame() {
-    wrongGuessCount = 0;
-    setGuessedLetters("");
   }
 
   return (
@@ -145,8 +146,16 @@ function App() {
       <div className="current-word">{displayCurrentWord}</div>
       <div className="keyboard">{keyboard}</div>
       <div className="new-game">
-        {(isGameWon && <button className="new-game-btn" onClick={renderNewGame}>New Game</button>) ||
-          (isGameOver && <button className="new-game-btn" onClick={renderNewGame}>New Game</button>)}
+        {(isGameWon && (
+          <button className="new-game-btn" onClick={renderNewGame}>
+            New Game
+          </button>
+        )) ||
+          (isGameOver && (
+            <button className="new-game-btn" onClick={renderNewGame}>
+              New Game
+            </button>
+          ))}
       </div>
     </>
   );
