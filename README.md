@@ -37,8 +37,6 @@ Play the game live: [https://assembly-tanzir.netlify.app/](https://assembly-tanz
 - Classic Hangman-style word-guessing gameplay
 - 8 attempts to save the programming world from Assembly
 - Modern, responsive UI built with React and Vite
-- Hot Module Replacement (HMR) for fast development
-- ESLint integration for code quality
 
 ---
 
@@ -89,20 +87,6 @@ npm run dev
 # or
 yarn dev
 ```
-
----
-
-## Documentation
-
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Documentation](https://react.dev/learn)
-- [ESLint Documentation](https://eslint.org/docs/latest/)
-
----
-
-## License
-
-MIT
 
 ---
 
