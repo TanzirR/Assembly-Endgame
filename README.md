@@ -1,12 +1,110 @@
-# React + Vite
+# Assembly-Endgame
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mini-game inspired by Hangman: **Guess the word in under 8 attempts to keep the programming world from Assembly!**  
+Built with React and Vite.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [Demo](#demo)
+- [Screenshots](#screenshots)
+- [Game Features](#game-features)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Documentation](#documentation)
+- [License](#license)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Demo
+
+Play the game live: [https://assembly-tanzir.netlify.app/](https://assembly-tanzir.netlify.app/)
+
+---
+
+## Screenshots
+
+<!-- Add your screenshots to the /screenshots directory and update the paths below -->
+![Gameplay Screenshot](screenshots/gameplay.png)
+![Victory Screen](screenshots/victory.png)
+![Defeat Screen](screenshots/defeat.png)
+
+---
+
+## Game Features
+
+- Classic Hangman-style word-guessing gameplay
+- 8 attempts to save the programming world from Assembly
+- Modern, responsive UI built with React and Vite
+- Hot Module Replacement (HMR) for fast development
+- ESLint integration for code quality
+
+---
+
+## Project Structure
+
+```plaintext
+Assembly-Endgame/
+├── public/               # Static assets
+│   └── ...
+├── src/
+│   ├── assets/           # Images, icons, etc.
+│   ├── components/       # React components
+│   ├── App.jsx           # Main app component
+│   ├── main.jsx          # Entry point
+│   └── ...
+├── .eslintrc.cjs         # Linting rules
+├── .gitignore
+├── index.html
+├── package.json
+├── README.md
+├── vite.config.js
+└── ...
+```
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/TanzirR/Assembly-Endgame.git
+cd Assembly-Endgame
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Run the development server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+---
+
+## Documentation
+
+- [Vite Documentation](https://vitejs.dev/guide/)
+- [React Documentation](https://react.dev/learn)
+- [ESLint Documentation](https://eslint.org/docs/latest/)
+
+---
+
+## License
+
+MIT
+
+---
+
+> _Guess the word, save the world!_  
+> _Enjoy playing and feel free to contribute!_
