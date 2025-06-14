@@ -19,6 +19,7 @@ A fun and educational word-guessing game inspired by Hangman, built with React. 
 <!-- Add your screenshots to the /screenshots directory and update the paths below -->
 <img src="https://github.com/user-attachments/assets/1d2301ad-9513-421f-8999-f630521190b8" alt="home" width="300"/>
 <img src="https://github.com/user-attachments/assets/81b7d882-f447-4e12-9bff-2308ab81921c" alt="won" width="300"/>
+<img src="https://github.com/user-attachments/assets/ac2c3018-cd47-480c-a61a-88d3f3a1b943" alt="def" width="300"/>
 <img src="https://github.com/user-attachments/assets/39e52e80-30de-45ec-a216-09e861b1f6d1" alt="def" width="300"/>
 
 ## Getting Started
