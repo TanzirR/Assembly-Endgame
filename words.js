@@ -1,4 +1,4 @@
-const words = [
+export const words = [
   "about",
   "account",
   "across",
@@ -483,4 +483,3 @@ const words = [
   "young",
 ];
 
-export const randomWord = words[Math.floor(Math.random() * words.length)];
