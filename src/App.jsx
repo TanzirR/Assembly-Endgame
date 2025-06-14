@@ -112,6 +112,11 @@ function App() {
       return <div className="game-status farewell-section">{getFarewellText(languages[wrongGuessCount - 1].name)}</div>;
     }
   }
+  //Render a new game
+  function renderNewGame() {
+    wrongGuessCount = 0;
+    setGuessedLetters("");
+  }
 
   return (
     <>
@@ -128,8 +133,8 @@ function App() {
       <div className="current-word">{displayCurrentWord}</div>
       <div className="keyboard">{keyboard}</div>
       <div className="new-game">
-        {(isGameWon && <button className="new-game-btn">New Game</button>) ||
-          (isGameOver && <button className="new-game-btn">New Game</button>)}
+        {(isGameWon && <button className="new-game-btn" onClick={renderNewGame}>New Game</button>) ||
+          (isGameOver && <button className="new-game-btn" onClick={renderNewGame}>New Game</button>)}
       </div>
     </>
   );
