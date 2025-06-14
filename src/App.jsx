@@ -2,12 +2,11 @@ import { useState, useRef } from "react";
 import { clsx } from "clsx";
 import "./App.css";
 import { languages } from "../languages";
-import { getFarewellText } from "../utils";
-import { randomWord } from "../words";
+import { getFarewellText, getRandomWord } from "../utils";
 import Confetti from "react-confetti";
 
 function App() {
-  const [currentWord, setCurrentWord] = useState(() => randomWord.split(""));
+  const [currentWord, setCurrentWord] = useState(() => getRandomWord().split(""));
   const [guessedLetters, setGuessedLetters] = useState([]);
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
@@ -94,10 +93,10 @@ function App() {
     );
   });
   //Render a new game
-  // function renderNewGame() {
-  //   wrongGuessCount = 0;
-  //   setGuessedLetters("");
-  // }
+  function renderNewGame() {
+    setCurrentWord(getRandomWord().split(""));
+    setGuessedLetters([]);
+  }
   //Render Game status
   function renderGameStatus() {
     if (isGameWon) {
@@ -147,12 +146,12 @@ function App() {
       <div className="keyboard">{keyboard}</div>
       <div className="new-game">
         {(isGameWon && (
-          <button className="new-game-btn" onClick={() => window.location.reload()}>
+          <button className="new-game-btn" onClick={renderNewGame}>
             New Game
           </button>
         )) ||
           (isGameOver && (
-            <button className="new-game-btn" onClick={() => window.location.reload()}>
+            <button className="new-game-btn" onClick={renderNewGame}>
               New Game
             </button>
           ))}
