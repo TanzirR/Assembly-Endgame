@@ -3,9 +3,10 @@ import { clsx } from "clsx";
 import "./App.css";
 import { languages } from "../languages";
 import { getFarewellText } from "../utils";
+import { randomWord } from "../words";
 
 function App() {
-  const [currentWord, setCurrentWord] = useState("react".split(""));
+  const [currentWord, setCurrentWord] = useState(() => randomWord.split(""));
   const [guessedLetters, setGuessedLetters] = useState([]);
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
