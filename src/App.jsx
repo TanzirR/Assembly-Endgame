@@ -4,6 +4,8 @@ import "./App.css";
 import { languages } from "../languages";
 import { getFarewellText } from "../utils";
 import { randomWord } from "../words";
+import Confetti from "react-confetti";
+
 
 function App() {
   const [currentWord, setCurrentWord] = useState(() => randomWord.split(""));
@@ -126,6 +128,9 @@ function App() {
   return (
     <>
       <header>
+        {isGameWon && (
+          <Confetti width={window.innerWidth} height={window.innerHeight} />
+        )}
         <h1>Assembly: Endgame</h1>
         {isGameOver ? null : (
           <p>
