@@ -1,12 +1,35 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { clsx } from "clsx";
 import "./App.css";
 import { languages } from "../languages";
+import { getFarewellText } from "../utils";
+import { randomWord } from "../words";
+import Confetti from "react-confetti";
 
 function App() {
-  const [currentWord, setCurrentWord] = useState("react".split(""));
+  const [currentWord, setCurrentWord] = useState(() => randomWord.split(""));
   const [guessedLetters, setGuessedLetters] = useState([]);
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
+  //Derived values...
+  //count the wrong number of guesses
+  let wrongGuessCount = 0;
+  for (let i = 0; i < guessedLetters.length; i++) {
+    if (!currentWord.includes(guessedLetters[i])) {
+      wrongGuessCount++;
+    }
+  }
+
+  /**
+   * Game over if  the game is won or guessed incorrectly within 8 times.
+   *  Make it more dynamic if more languages are added.
+   * Tries should be n-1. Or if the game is won
+   */
+  const isGameOver = wrongGuessCount == languages.length - 1 ? true : false;
+
+  let isGameWon = currentWord.every((letter) =>
+    guessedLetters.includes(letter)
+  );
 
   /*
     A new array in state to hold user's guessed letters.When the user choose a letter,
@@ -20,11 +43,15 @@ function App() {
     });
   }
 
-  //Convert the currentWord string to an array and map over
+  //Map over the correct guessed letters. If the game is lost, display the entire word
   const displayCurrentWord = currentWord.map((word, index) => {
     return (
-      <div className="letters" style={{ color: "red" }} key={index}>
-        {word.toLocaleUpperCase()}
+      <div className="letters" key={index}>
+        {isGameOver
+          ? word.toLocaleUpperCase()
+          : guessedLetters.includes(word)
+          ? word.toLocaleUpperCase()
+          : ""}
       </div>
     );
   });
@@ -42,6 +69,7 @@ function App() {
       <button
         className={className}
         key={letter}
+        disabled={isGameOver || isGameWon ? true : false}
         onClick={() => addGuessedLetter(letter)}
       >
         {letter.toLocaleUpperCase()}
@@ -50,10 +78,11 @@ function App() {
   });
 
   //Map over the languages objs
-  const languageElements = languages.map((language) => {
+  const languageElements = languages.map((language, index) => {
+    const isLanguageLost = index < wrongGuessCount;
     return (
       <div
-        className="language"
+        className={isLanguageLost ? "language lost" : "language"}
         key={language.name}
         style={{
           backgroundColor: language.backgroundColor,
@@ -64,25 +93,69 @@ function App() {
       </div>
     );
   });
+  //Render a new game
+  function renderNewGame() {
+    wrongGuessCount = 0;
+    setGuessedLetters("");
+  }
+  //Render Game status
+  function renderGameStatus() {
+    if (isGameWon) {
+      return (
+        <div className=" game-status game-won">
+          <h2>You win!</h2>
+          <p>Well done! 🎉</p>
+        </div>
+      );
+    } else if (isGameOver) {
+      return (
+        <div className="game-status game-lost">
+          <h2>Game over!</h2>
+          <p>You lose! Better start learning Assembly 😭</p>
+        </div>
+      );
+    } else if (
+      guessedLetters[guessedLetters.length - 1] &&
+      !currentWord.includes(guessedLetters[guessedLetters.length - 1])
+    ) {
+      return (
+        <div className="game-status farewell-section">
+          {getFarewellText(languages[wrongGuessCount - 1].name)}
+        </div>
+      );
+    }
+  }
 
   return (
     <>
       <header>
+        {isGameWon && (
+          <Confetti width={window.innerWidth} height={window.innerHeight} />
+        )}
         <h1>Assembly: Endgame</h1>
-        <p>
-          Guess the word in under 8 attempts to keep the programming world from
-          Assembly!
-        </p>
+        {isGameOver ? null : (
+          <p>
+            {`Guess the word in under ${languages.length - wrongGuessCount - 1}
+          attempts to keep the programming world from Assembly!`}
+          </p>
+        )}
       </header>
-      <div className="game-status">
-        <h2>You win!</h2>
-        <p>Well done! 🎉</p>
-      </div>
+
+      <div className="game-status">{renderGameStatus()}</div>
       <div className="languages-section">{languageElements}</div>
       <div className="current-word">{displayCurrentWord}</div>
       <div className="keyboard">{keyboard}</div>
       <div className="new-game">
-        <button className="new-game-btn">New Game</button>
+        {(isGameWon && (
+          <button className="new-game-btn" onClick={renderNewGame}>
+            New Game
+          </button>
+        )) ||
+          (isGameOver && (
+            <button className="new-game-btn" onClick={renderNewGame}>
+              New Game
+            </button>
+          ))}
       </div>
     </>
   );

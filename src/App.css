@@ -29,7 +29,7 @@ header p {
 }
 
 .game-status {
-  background-color: #10a95b;
+  /* background-color: #10a95b; */
   max-width: 550px;
   height: 80px;
   color: #f9f4da;
@@ -37,6 +37,12 @@ header p {
   border-radius: 8px;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+.game-won {
+  background-color: #10a95b;
+}
+.game-lost {
+  background-color: #ba2a2a;
 }
 .game-status h2 {
   font-size: 1.75rem;
@@ -60,7 +66,24 @@ header p {
 .language {
   border-radius: 4px;
   padding: 6px;
+  position: relative;
 }
+
+/* Dimmed overlay with skull on "lost" languages */
+.language.lost::before {
+  content: "💀";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .current-word {
   display: flex;
   justify-content: center;
@@ -78,7 +101,7 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: transparent;
+  color: #f9f4da;
 }
 .keyboard {
   display: flex;
@@ -102,6 +125,10 @@ header p {
   border: 1px solid #d7d7d7;
   border-radius: 4px;
   cursor: pointer;
+}
+.keyboard-letters:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 .new-game {
   display: flex;
@@ -130,4 +157,16 @@ header p {
 
 .inCorrectLetter {
   background-color: #ec5d49;
+}
+
+.farewell-section {
+  background-color: #7a5ea7;
+  border: 2px #323232;
+  border-style: dotted;
+  font-style: italic;
+  color: #f9f4da;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
