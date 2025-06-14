@@ -26,7 +26,8 @@ Play the game live: [https://assembly-tanzir.netlify.app/](https://assembly-tanz
 ## Screenshots
 
 <!-- Add your screenshots to the /screenshots directory and update the paths below -->
-![Gameplay Screenshot](screenshots/gameplay.png)
+![Gameplay Screenshot](![home](https://github.com/user-attachments/assets/d1aae102-9aad-433e-9683-6e6444983ce8)
+play.png)
 ![Victory Screen](screenshots/victory.png)
 ![Defeat Screen](screenshots/defeat.png)
 
